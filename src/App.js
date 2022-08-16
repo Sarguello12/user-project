@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import AddUser from "./components/Users/AddUser";
 import UsersList from "./components/Users/UsersList";
 
@@ -15,11 +15,12 @@ function App() {
     });
   };
 
+  // Fragment prevents lots of pointless divs it can also be called without import by React.Fragment
   return (
-    <div>
+    <Fragment>
       <AddUser onAddUser={addUserHandler}></AddUser>
       <UsersList users={usersList}></UsersList>
-    </div>
+    </Fragment>
   );
 }
 
